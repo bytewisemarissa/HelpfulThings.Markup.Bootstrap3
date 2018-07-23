@@ -49,6 +49,43 @@ namespace System.Web.Mvc.Html
             return returnWriter;
         }
 
+        public static IHtmlContent BootstrapPasswordFor<TModel, TProperty>(
+            this IHtmlHelper<TModel> helper,
+            Expression<Func<TModel, TProperty>> expression,
+            bool isReadOnly = false,
+            string description = null)
+        {
+            var label = helper.LabelFor(expression, new { @for = helper.IdFor(expression) });
+
+            IHtmlContent input;
+            if (isReadOnly)
+            {
+                input = helper.PasswordFor(expression, new { @readonly = "readonly", @class = "form-control" });
+            }
+            else
+            {
+                input = helper.PasswordFor(expression, new { @class = "form-control" });
+            }
+
+            var descriptionHtml = description == null ? string.Empty : $"<small class=\"text-muted\">{description}</small>";
+
+            var returnWriter = new HtmlContentBuilder();
+
+            returnWriter.AppendHtml("<div class=\"form-group\">");
+
+            returnWriter.AppendHtml(label);
+            returnWriter.AppendHtml(input);
+
+            if (description != string.Empty)
+            {
+                returnWriter.AppendHtml(descriptionHtml);
+            }
+
+            returnWriter.AppendHtml("</div>");
+
+            return returnWriter;
+        }
+
         public static IHtmlContent BootstrapTextAreaFor<TModel, TProperty>(
             this IHtmlHelper<TModel> helper,
             Expression<Func<TModel, TProperty>> expression,
