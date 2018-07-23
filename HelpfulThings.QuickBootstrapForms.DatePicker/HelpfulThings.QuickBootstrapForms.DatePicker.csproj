@@ -2,6 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Paranoid_Twitch</Authors>
+    <Company>Paranoid_Twitch</Company>
+    <Copyright>2018</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/paranoidTwitch/HelpfulThings.QuickBootstrapForms/master/LICENCE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/paranoidTwitch/HelpfulThings.QuickBootstrapForms</PackageProjectUrl>
+    <PackageIconUrl>https://i.imgur.com/Ep0s6Nu.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/paranoidTwitch/HelpfulThings.QuickBootstrapForms</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>Bootstrap MVC Extensions</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.1.1" />
+  </ItemGroup>
 
 </Project>

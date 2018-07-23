@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Paranoid_Twitch</Authors>
+    <Company />
+    <Copyright>2018</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/paranoidTwitch/HelpfulThings.QuickBootstrapForms/master/LICENCE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/paranoidTwitch/HelpfulThings.QuickBootstrapForms</PackageProjectUrl>
+    <PackageIconUrl>https://i.imgur.com/Ep0s6Nu.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/paranoidTwitch/HelpfulThings.QuickBootstrapForms</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>Bootstrap MVC Extensions</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
