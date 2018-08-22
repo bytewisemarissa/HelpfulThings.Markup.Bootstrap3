@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using HelpfulThings.QuickBootstrapForms;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
@@ -15,8 +16,7 @@ namespace System.Web.Mvc.Html
         public static IHtmlContent BootstrapTextBoxFor<TModel, TProperty>(
             this IHtmlHelper<TModel> helper,
             Expression<Func<TModel, TProperty>> expression,
-            bool isReadOnly = false,
-            string description = null)
+            bool isReadOnly = false)
         {
             var label = helper.LabelFor(expression, new { @for = helper.IdFor(expression) });
 
@@ -30,6 +30,7 @@ namespace System.Web.Mvc.Html
                 input = helper.TextBoxFor(expression, new { @class = "form-control" });
             }
 
+            var description = expression.GetDescription();
             var descriptionHtml = description == null ? string.Empty : $"<small class=\"text-muted\">{description}</small>";
 
             var returnWriter = new HtmlContentBuilder();
@@ -52,11 +53,10 @@ namespace System.Web.Mvc.Html
         public static IHtmlContent BootstrapPasswordFor<TModel, TProperty>(
             this IHtmlHelper<TModel> helper,
             Expression<Func<TModel, TProperty>> expression,
-            bool isReadOnly = false,
-            string description = null)
+            bool isReadOnly = false)
         {
             var label = helper.LabelFor(expression, new { @for = helper.IdFor(expression) });
-
+            
             IHtmlContent input;
             if (isReadOnly)
             {
@@ -67,6 +67,7 @@ namespace System.Web.Mvc.Html
                 input = helper.PasswordFor(expression, new { @class = "form-control" });
             }
 
+            var description = expression.GetDescription();
             var descriptionHtml = description == null ? string.Empty : $"<small class=\"text-muted\">{description}</small>";
 
             var returnWriter = new HtmlContentBuilder();
@@ -89,8 +90,7 @@ namespace System.Web.Mvc.Html
         public static IHtmlContent BootstrapTextAreaFor<TModel, TProperty>(
             this IHtmlHelper<TModel> helper,
             Expression<Func<TModel, TProperty>> expression,
-            bool isReadOnly = false,
-            string description = null)
+            bool isReadOnly = false)
         {
             var label = helper.LabelFor(expression, new { @for = helper.IdFor(expression) });
 
@@ -104,6 +104,7 @@ namespace System.Web.Mvc.Html
                 input = helper.TextAreaFor(expression, new { @class = "form-control" });
             }
 
+            var description = expression.GetDescription();
             var descriptionHtml = description == null ? string.Empty : $"<small class=\"text-muted\">{description}</small>";
 
             var returnWriter = new HtmlContentBuilder();
@@ -126,8 +127,7 @@ namespace System.Web.Mvc.Html
         public static IHtmlContent BootstrapCheckboxFor<TModel>(
             this IHtmlHelper<TModel> helper,
             Expression<Func<TModel, bool>> expression,
-            bool isReadOnly = false,
-            string description = null)
+            bool isReadOnly = false)
         {
             var data = ExpressionMetadataProvider.FromLambdaExpression(expression, helper.ViewData,
                 helper.MetadataProvider);
@@ -144,6 +144,7 @@ namespace System.Web.Mvc.Html
                 input = helper.CheckBoxFor(expression, new { @class = "form-check-input" });
             }
 
+            var description = expression.GetDescription();
             var descriptionHtml = description == null ? string.Empty : $"<small class=\"text-muted\">{description}</small>";
 
 
@@ -173,7 +174,6 @@ namespace System.Web.Mvc.Html
             Expression<Func<TModel, TProperty>> expression,
             Dictionary<TProperty, TDisplay> options,
             bool isReadOnly = false,
-            string description = null,
             string buttonClass = "btn btn-default")
         {
             var returnWriter = new HtmlContentBuilder();
@@ -198,6 +198,7 @@ namespace System.Web.Mvc.Html
                 returnWriter.AppendHtml($"</label>");
             }
             returnWriter.AppendHtml($"</div>");
+            var description = expression.GetDescription();
             returnWriter.AppendHtml(description == null ? string.Empty : $"<small class=\"text-muted\">{description}</small>");
             returnWriter.AppendHtml($"</div>");
             returnWriter.AppendHtml($"<script type=\"text/javascript\">function {helper.IdFor(expression)}_HandleUpdateFor(){{$('input[name={helper.IdFor(expression)}]:checked').removeAttr('checked');$('label[name={helper.IdFor(expression)}Label)].active').find('input').attr('checked', 'checked');}}</script>");

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using HelpfulThings.QuickBootstrapForms;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -13,8 +14,7 @@ namespace System.Web.Mvc.Html
         public static IHtmlContent BootstrapDatetimePickerFor<TModel, TProperty>(
             this IHtmlHelper<TModel> helper,
             Expression<Func<TModel, TProperty>> expression,
-            bool isReadOnly = false,
-            string description = null)
+            bool isReadOnly = false)
         {
 
 
@@ -30,6 +30,7 @@ namespace System.Web.Mvc.Html
                 input = helper.TextBoxFor(expression, new { @class = "form-control" });
             }
 
+            var description = expression.GetDescription();
             var descriptionHtml = description == null ? string.Empty : $"<small class=\"form-text text-muted\">{description}</small>";
 
             var returnWriter = new HtmlContentBuilder();
