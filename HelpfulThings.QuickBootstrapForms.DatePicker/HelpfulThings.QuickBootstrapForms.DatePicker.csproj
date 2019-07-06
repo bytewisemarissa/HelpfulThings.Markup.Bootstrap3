@@ -15,7 +15,7 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <AssemblyVersion>1.0.2.0</AssemblyVersion>
     <FileVersion>1.0.2.0</FileVersion>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Description>This package provides some helpful HtmlHelper extensions for quickly building forms the bootstrap datetime picker.</Description>
   </PropertyGroup>
 

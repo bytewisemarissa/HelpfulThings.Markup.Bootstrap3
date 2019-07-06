@@ -180,12 +180,12 @@ namespace System.Web.Mvc.Html
 
             returnWriter.AppendHtml($"<div class=\"form-group\">");
             returnWriter.AppendHtml(helper.LabelFor(expression, new { @for = helper.IdFor(expression) }));
-            returnWriter.AppendHtml($"<div class=\"btn-group\" data-toggle=\"buttons\" id=\"{helper.IdFor(expression)}InputGroup\">");
+            returnWriter.AppendHtml($"<p><div class=\"btn-group\" data-toggle=\"buttons\" id=\"{helper.IdFor(expression)}InputGroup\">");
 
             var classes = isReadOnly ? $"{buttonClass} disabled" : buttonClass;
             foreach (var option in options)
             {
-                if (Equals(helper.ValueFor(expression), option.Key))
+                if (Equals(helper.ValueFor(expression), option.Key.ToString()))
                 {
                     returnWriter.AppendHtml($"<label name=\"{helper.IdFor(expression)}Label\" class=\"{classes} active\" onclick=\"{helper.IdFor(expression)}_HandleUpdateFor();\">");
                 }
@@ -197,7 +197,7 @@ namespace System.Web.Mvc.Html
                 returnWriter.AppendHtml(option.Value.ToString());
                 returnWriter.AppendHtml($"</label>");
             }
-            returnWriter.AppendHtml($"</div>");
+            returnWriter.AppendHtml($"</div></p>");
             var description = expression.GetDescription();
             returnWriter.AppendHtml(description == null ? string.Empty : $"<small class=\"text-muted\">{description}</small>");
             returnWriter.AppendHtml($"</div>");
