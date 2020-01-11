@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using HelpfulThings.QuickBootstrapForms;
+using HelpfulThings.Markup.Bootstrap3Forms;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+// ReSharper disable once CheckNamespace
 namespace System.Web.Mvc.Html
 {
     public static class QuickBootstrapFormsDatePicker

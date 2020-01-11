@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
 
-namespace HelpfulThings.QuickBootstrapForms
+namespace HelpfulThings.Markup.Bootstrap3Forms
 {
     public static class Extensions
     {
@@ -17,10 +14,9 @@ namespace HelpfulThings.QuickBootstrapForms
             return attributes.Length > 0 ? attributes[0] as T : null;
         }
 
-        public static string GetDescription<T, V>(this Expression<Func<T, V>> expression)
+        public static string GetDescription<T, TV>(this Expression<Func<T, TV>> expression)
         {
-            var memberExpression = expression.Body as MemberExpression;
-            if (memberExpression == null)
+            if (!(expression.Body is MemberExpression memberExpression))
                 throw new InvalidOperationException("Expression must be a member expression");
             
             return memberExpression.Member.GetAttribute<DescriptionAttribute>()?.Description;

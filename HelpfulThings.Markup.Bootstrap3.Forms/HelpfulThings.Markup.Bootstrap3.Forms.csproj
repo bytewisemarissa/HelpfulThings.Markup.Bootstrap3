@@ -3,8 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Paranoid_Twitch</Authors>
-    <Company>Paranoid_Twitch</Company>
+    <Company />
     <Copyright>2018</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/paranoidTwitch/HelpfulThings.QuickBootstrapForms/master/LICENCE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/paranoidTwitch/HelpfulThings.QuickBootstrapForms</PackageProjectUrl>
@@ -12,20 +13,17 @@
     <RepositoryUrl>https://github.com/paranoidTwitch/HelpfulThings.QuickBootstrapForms</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <PackageTags>Bootstrap MVC Extensions</PackageTags>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <AssemblyVersion>1.0.2.0</AssemblyVersion>
     <FileVersion>1.0.2.0</FileVersion>
     <Version>1.0.4</Version>
-    <Description>This package provides some helpful HtmlHelper extensions for quickly building forms the bootstrap datetime picker.</Description>
+    <Description>This package provides some helpful HtmlHelper extensions for quickly building forms with bootstrap controls.</Description>
+    <AssemblyName>HelpfulThings.Markup.Bootstrap3.Forms</AssemblyName>
+    <RootNamespace>HelpfulThings.Markup.Bootstrap3.Forms</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\HelpfulThings.QuickBootstrapForms\HelpfulThings.QuickBootstrapForms.csproj" />
   </ItemGroup>
 
 </Project>
