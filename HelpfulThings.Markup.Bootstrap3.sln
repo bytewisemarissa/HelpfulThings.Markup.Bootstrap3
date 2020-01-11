@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpfulThings.QuickBootstrapForms", "HelpfulThings.QuickBootstrapForms\HelpfulThings.QuickBootstrapForms.csproj", "{BDC62031-11DA-423E-88AA-73387F31D8CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpfulThings.Markup.Bootstrap3.Forms", "HelpfulThings.Markup.Bootstrap3.Forms\HelpfulThings.Markup.Bootstrap3.Forms.csproj", "{BDC62031-11DA-423E-88AA-73387F31D8CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpfulThings.QuickBootstrapForms.DatePicker", "HelpfulThings.QuickBootstrapForms.DatePicker\HelpfulThings.QuickBootstrapForms.DatePicker.csproj", "{B20BBC25-EF49-4FD0-BBE1-CF52C9E24599}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpfulThings.Markup.Bootstrap3.Forms.DatePicker", "HelpfulThings.Markup.Bootstrap3.Forms.DatePicker\HelpfulThings.Markup.Bootstrap3.Forms.DatePicker.csproj", "{B20BBC25-EF49-4FD0-BBE1-CF52C9E24599}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

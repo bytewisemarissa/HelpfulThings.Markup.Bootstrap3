@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
-using HelpfulThings.Markup.Bootstrap3Forms;
+﻿using System.Linq.Expressions;
+using HelpfulThings.Markup.Bootstrap3.Forms.DatePicker;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
